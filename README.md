@@ -23,7 +23,7 @@ Pick a date, type an amount, and see the exchange — no sign-up, no server, no 
 
 1. Visit **https://masarusz.github.io/RateBridge** (or open `index.html` locally)
 2. The date defaults to today; change it to see a historical rate
-3. Type an amount in the left box (default: 1 JPY)
+3. Type an amount in the left box (default: 1 USD)
 4. Read the converted value on the right
 5. Press **⇅** to swap the two currencies
 
@@ -56,6 +56,9 @@ script.js    # App logic (fetch, convert, swap)
 ---
 
 ## Change Log
+
+### v1.0.4 — 2026-06-28
+- Change: default currency direction is now USD → JPY (was JPY → USD)
 
 ### v1.0.3 — 2026-06-28
 - Fix: date field overflow on iOS Safari — the native date control ignores `box-sizing` and adds its padding outside `width:100%`; stripping `-webkit-appearance` makes it honor border-box so the box now fits its container (the v1.0.2 `min-width:0` change was insufficient)

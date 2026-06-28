@@ -22,8 +22,8 @@ const els = {
 // State
 const state = {
   date: todayISO(),
-  base: "JPY",   // left / editable currency
-  quote: "USD",  // right / result currency
+  base: "USD",   // left / editable currency
+  quote: "JPY",  // right / result currency
 };
 
 // In-memory cache of rates, keyed by `${date}|${base}|${quote}`.
