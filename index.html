@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RateBridge — JPY ⇄ USD Exchange</title>
+  <meta name="description" content="Convert between Japanese Yen and US Dollar on any date. Free, no sign-up." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text y='32' font-size='32'>💱</text></svg>">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="app-header__inner">
+      <div class="app-header__brand">
+        <span class="app-header__icon">💱</span>
+        <span class="app-header__name">RateBridge</span>
+      </div>
+      <span class="app-header__tagline">JPY ⇄ USD</span>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="app-main">
+    <section class="card">
+
+      <!-- Date -->
+      <div class="field field--date">
+        <label class="field__label" for="dateInput">Date</label>
+        <input class="field__input" type="date" id="dateInput" />
+      </div>
+
+      <!-- Converter -->
+      <div class="converter">
+
+        <!-- LEFT (editable) -->
+        <div class="money money--left">
+          <span class="money__currency" id="leftCurrency">JPY</span>
+          <input
+            class="money__amount"
+            id="leftAmount"
+            type="number"
+            inputmode="decimal"
+            min="0"
+            step="any"
+            value="1"
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- SWAP -->
+        <button class="swap" id="swapBtn" type="button" aria-label="Swap currencies" title="Swap currencies">
+          <span class="swap__icon" aria-hidden="true">⇅</span>
+        </button>
+
+        <!-- RIGHT (result) -->
+        <div class="money money--right">
+          <span class="money__currency" id="rightCurrency">USD</span>
+          <output class="money__amount money__amount--result" id="rightAmount">—</output>
+        </div>
+
+      </div>
+
+      <!-- Status / rate line -->
+      <p class="status" id="status" aria-live="polite"></p>
+
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>© 2026 <a href="https://github.com/masarusz" target="_blank" rel="noopener">masarusz</a> · rates by <a href="https://frankfurter.dev" target="_blank" rel="noopener">Frankfurter</a> (ECB)</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
