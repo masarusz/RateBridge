@@ -164,7 +164,7 @@ body {
 .money__amount:focus { outline: none; }
 .money__amount--result {
   display: block;
-  overflow-wrap: anywhere;
+  white-space: nowrap; /* JS shrinks font-size to keep long results on one line */
 }
 /* hide number input spinners */
 .money__amount[type="number"]::-webkit-outer-spin-button,

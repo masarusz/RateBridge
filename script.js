@@ -57,6 +57,20 @@ function formatAmount(value) {
   });
 }
 
+// Shrink the result's font-size so long numbers stay on a single line,
+// down to a readable minimum; resets to the CSS base for short values.
+function fitResult() {
+  const el = els.rightAmount;
+  el.style.fontSize = ""; // back to CSS base before measuring
+  const base = parseFloat(getComputedStyle(el).fontSize);
+  const min = 14;
+  let size = base;
+  while (el.scrollWidth > el.clientWidth && size > min) {
+    size -= 1;
+    el.style.fontSize = size + "px";
+  }
+}
+
 function setStatus(text, kind = "") {
   els.status.textContent = text;
   els.status.className = "status" + (kind ? ` status--${kind}` : "");
@@ -111,6 +125,7 @@ async function convert() {
 
     const converted = amount * rate;
     els.rightAmount.textContent = formatAmount(converted);
+    fitResult();
 
     const asOf = date !== state.date ? ` (rate as of ${date})` : "";
     setStatus(`1 ${state.base} = ${formatAmount(rate)} ${state.quote}${asOf}`);
@@ -150,6 +165,7 @@ function init() {
 
   els.leftAmount.addEventListener("input", debounce(convert, 300));
   els.swap.addEventListener("click", swap);
+  window.addEventListener("resize", debounce(fitResult, 150));
 
   convert();
 }

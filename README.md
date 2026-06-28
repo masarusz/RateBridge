@@ -57,6 +57,9 @@ script.js    # App logic (fetch, convert, swap)
 
 ## Change Log
 
+### v1.0.6 — 2026-06-28
+- Fix: long conversion results now auto-shrink their font to stay on a single line (down to a readable minimum) instead of wrapping to two lines
+
 ### v1.0.5 — 2026-06-28
 - Fix: add version query strings to `style.css` / `script.js` so browsers fetch fresh assets after each release instead of serving stale cached copies (caused new HTML to run against old JS)
 
