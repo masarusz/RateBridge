@@ -9,6 +9,8 @@
   --accent: #4f9cf9;
   --accent-soft: #1f3a57;
   --error: #ff6b6b;
+  --cur-usd: #4ec98a;
+  --cur-jpy: #ff6b6b;
   --radius: 14px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
@@ -27,6 +29,8 @@
     --accent: #2f7fe0;
     --accent-soft: #e3eefb;
     --error: #d64545;
+    --cur-usd: #2e9e6a;
+    --cur-jpy: #d64545;
     --shadow: 0 10px 30px rgba(20, 40, 70, 0.10);
   }
 }
@@ -150,6 +154,8 @@ body {
   color: var(--accent);
   letter-spacing: 0.05em;
 }
+.money__currency--usd { color: var(--cur-usd); }
+.money__currency--jpy { color: var(--cur-jpy); }
 .money__amount {
   font: inherit;
   font-size: 1.5rem;

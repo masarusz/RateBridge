@@ -57,6 +57,9 @@ script.js    # App logic (fetch, convert, swap)
 
 ## Change Log
 
+### v1.0.7 — 2026-06-28
+- UI: currency labels are now colour-coded (USD green, JPY red) for better visibility; the colour follows the currency, not the side, so it stays consistent after a swap
+
 ### v1.0.6 — 2026-06-28
 - Fix: long conversion results now auto-shrink their font to stay on a single line (down to a readable minimum) instead of wrapping to two lines
 

@@ -139,17 +139,26 @@ async function convert() {
 
 /* ---------------------------- handlers ---------------------------- */
 
+// Render currency labels with a per-currency colour class (USD green, JPY red),
+// so the colour follows the currency regardless of which side it's on.
+function renderCurrencies() {
+  els.leftCurrency.textContent = state.base;
+  els.rightCurrency.textContent = state.quote;
+  els.leftCurrency.className = "money__currency money__currency--" + state.base.toLowerCase();
+  els.rightCurrency.className = "money__currency money__currency--" + state.quote.toLowerCase();
+}
+
 function swap() {
   // Switch currencies; keep the left amount value as-is (per design).
   [state.base, state.quote] = [state.quote, state.base];
-  els.leftCurrency.textContent = state.base;
-  els.rightCurrency.textContent = state.quote;
+  renderCurrencies();
   convert();
 }
 
 function init() {
   els.date.value = state.date;
   els.date.max = todayISO(); // no future rates available
+  renderCurrencies();
 
   els.date.addEventListener("change", () => {
     // Guard against future dates: the native picker doesn't always enforce `max`.
