@@ -57,6 +57,9 @@ script.js    # App logic (fetch, convert, swap)
 
 ## Change Log
 
+### v1.0.2 — 2026-06-28
+- Fix: date field no longer overflows its box on iOS — added `min-width: 0` so the native date control shrinks to its container instead of extending past the right edge
+
 ### v1.0.1 — 2026-06-28
 - Fix: date value now left-aligned on iOS Safari (was centered) via `::-webkit-date-and-time-value`
 - Fix: future dates are now clamped to today in JS — the native mobile date picker didn't always enforce the `max` attribute

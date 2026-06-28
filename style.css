@@ -101,7 +101,12 @@ body {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 12px 14px;
+  display: block;
   width: 100%;
+  max-width: 100%;
+  /* min-width:0 lets the native date control shrink to its container instead
+     of overflowing the right edge on iOS (flex/intrinsic-width quirk) */
+  min-width: 0;
   text-align: left;
 }
 /* iOS/WebKit centers the date value by default — force left alignment */
