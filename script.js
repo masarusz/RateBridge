@@ -137,7 +137,14 @@ function init() {
   els.date.max = todayISO(); // no future rates available
 
   els.date.addEventListener("change", () => {
-    state.date = els.date.value || todayISO();
+    // Guard against future dates: the native picker doesn't always enforce `max`.
+    const max = todayISO();
+    let value = els.date.value || max;
+    if (value > max) {
+      value = max;
+      els.date.value = max;
+    }
+    state.date = value;
     convert();
   });
 

@@ -102,7 +102,11 @@ body {
   border-radius: 10px;
   padding: 12px 14px;
   width: 100%;
+  text-align: left;
 }
+/* iOS/WebKit centers the date value by default — force left alignment */
+.field__input::-webkit-date-and-time-value { text-align: left; }
+.field__input::-webkit-datetime-edit { text-align: left; }
 .field__input:focus {
   outline: none;
   border-color: var(--border-focus);

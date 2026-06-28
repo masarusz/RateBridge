@@ -57,6 +57,10 @@ script.js    # App logic (fetch, convert, swap)
 
 ## Change Log
 
+### v1.0.1 — 2026-06-28
+- Fix: date value now left-aligned on iOS Safari (was centered) via `::-webkit-date-and-time-value`
+- Fix: future dates are now clamped to today in JS — the native mobile date picker didn't always enforce the `max` attribute
+
 ### v1.0.0 — 2026-06-28
 - Initial release
 - Date-based JPY ⇄ USD conversion via Frankfurter / ECB
