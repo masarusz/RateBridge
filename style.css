@@ -104,10 +104,19 @@ body {
   display: block;
   width: 100%;
   max-width: 100%;
-  /* min-width:0 lets the native date control shrink to its container instead
-     of overflowing the right edge on iOS (flex/intrinsic-width quirk) */
   min-width: 0;
   text-align: left;
+  /* iOS Safari's native date control ignores box-sizing and adds its padding
+     OUTSIDE width:100%, overflowing the right edge. Stripping the native
+     appearance makes it honor border-box. */
+  -webkit-appearance: none;
+  appearance: none;
+}
+/* keep the calendar picker button visible/clickable on desktop */
+.field__input::-webkit-calendar-picker-indicator {
+  margin-left: auto;
+  cursor: pointer;
+  opacity: 0.7;
 }
 /* iOS/WebKit centers the date value by default — force left alignment */
 .field__input::-webkit-date-and-time-value { text-align: left; }

@@ -57,6 +57,9 @@ script.js    # App logic (fetch, convert, swap)
 
 ## Change Log
 
+### v1.0.3 — 2026-06-28
+- Fix: date field overflow on iOS Safari — the native date control ignores `box-sizing` and adds its padding outside `width:100%`; stripping `-webkit-appearance` makes it honor border-box so the box now fits its container (the v1.0.2 `min-width:0` change was insufficient)
+
 ### v1.0.2 — 2026-06-28
 - Fix: date field no longer overflows its box on iOS — added `min-width: 0` so the native date control shrinks to its container instead of extending past the right edge
 
