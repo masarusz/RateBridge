@@ -57,6 +57,9 @@ script.js    # App logic (fetch, convert, swap)
 
 ## Change Log
 
+### v1.0.8 — 2026-11-18
+- Replace the emoji favicon with the app icon: SVG favicon, 32×32 PNG fallback, and a 180×180 `apple-touch-icon` for iOS home screens
+
 ### v1.0.7 — 2026-06-28
 - UI: currency labels are now colour-coded (USD green, JPY red) for better visibility; the colour follows the currency, not the side, so it stays consistent after a swap
 
