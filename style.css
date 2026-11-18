@@ -64,7 +64,7 @@ body {
   gap: 12px;
 }
 .app-header__brand { display: flex; align-items: center; gap: 8px; }
-.app-header__icon { font-size: 1.4rem; }
+.app-header__icon { display: block; width: 26px; height: 26px; border-radius: 22%; }
 .app-header__name { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.2px; }
 .app-header__tagline { color: var(--text-dim); font-size: 0.9rem; font-weight: 600; }
 
